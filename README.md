@@ -24,12 +24,32 @@ Target variable: **Churn**
 - Model evaluation using confusion matrix and ROC–AUC
 - Business-oriented interpretation of results
 
-## Key Exploratory Insights
-- Senior citizens exhibit significantly higher churn rates than non-senior customers
-- Fiber optic internet users have the highest churn rates
-- Customers without online security, online backup, or tech support churn at much higher rates
-- Contract type is a strong churn driver, with month-to-month customers exhibiting the highest churn
-- Streaming services have limited impact on churn behavior
+
+- ## Key Exploratory Insights
+
+From exploratory data analysis, the following churn patterns were observed:
+
+1. **Senior citizens show higher churn than non-senior citizens**  
+   Churn among senior citizens is higher than non-senior citizens (**41.68% vs 23.61%**).
+
+2. **Fiber optic customers have the highest churn**  
+   Customers using fiber optic internet have a higher churn rate than customers using DSL and no internet service combined (**41.89% vs 26.36%**).
+
+3. **Online security is strongly associated with churn**  
+   Customers with **no online security** churn at nearly double the rate of those with online security (**41.77% vs 22.01%**).
+
+4. **Online backup reduces churn risk**  
+   Customers without online backup churn at nearly twice the rate of those with online backup (**39.93% vs 21.53%**).
+
+5. **Tech support is a strong retention factor**  
+   Customers without tech support churn at almost three times the rate of those with tech support (**41.64% vs 15.17%**).
+
+6. **Streaming services show limited impact on churn**  
+   Churn rates are relatively similar for customers with and without streaming TV (**33.07% vs 30.07%**). A similar pattern is observed for streaming movies.
+
+7. **Contract type is one of the strongest churn drivers**  
+   Month-to-month customers churn at a much higher rate than customers on one-year and two-year contracts combined (**42.71% vs 14.10%**).
+
 
 ## Modeling & Evaluation
 A logistic regression model was trained using a stratified train-test split. Model performance was evaluated using:
