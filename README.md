@@ -3,6 +3,12 @@
 ## Project Overview
 Customer churn is a major challenge in the telecom industry due to high competition and low switching costs. This project analyzes customer demographics, service usage, and billing information to identify key drivers of churn and build a predictive model to estimate churn risk.
 
+## Results at a Glance
+- **ROC–AUC:** 0.84  
+- **Churn Recall:** 79%  
+- **Model Type:** Logistic Regression  
+- **Goal:** Identify at-risk customers for proactive retention  
+
 ## Dataset
 The dataset contains customer-level information including:
 - Demographics (e.g., gender, senior citizen status)
@@ -24,9 +30,7 @@ Target variable: **Churn**
 - Model evaluation using confusion matrix and ROC–AUC
 - Business-oriented interpretation of results
 
-
- ## Key Exploratory Insights
-
+## Key Exploratory Insights
 From exploratory data analysis, the following churn patterns were observed:
 
 1. **Senior citizens show higher churn than non-senior citizens**  
@@ -50,14 +54,20 @@ From exploratory data analysis, the following churn patterns were observed:
 7. **Contract type is one of the strongest churn drivers**  
    Month-to-month customers churn at a much higher rate than customers on one-year and two-year contracts combined (**42.71% vs 14.10%**).
 
+## Model Performance (Test Set)
+The logistic regression model was evaluated on a held-out test set using multiple classification metrics:
 
-## Modeling & Evaluation
-A logistic regression model was trained using a stratified train-test split. Model performance was evaluated using:
-- Confusion matrix
-- Precision, recall, and F1-score
-- ROC–AUC
+- **ROC–AUC:** 0.84  
+- **Accuracy:** 0.74  
+- **Churn Recall (Class 1):** 0.79  
+- **Churn Precision (Class 1):** 0.51  
 
-The model demonstrates good ability to distinguish churners from non-churners.
+### Confusion Matrix Summary
+- 294 churners were correctly identified
+- 80 churners were missed
+- 286 non-churners were incorrectly flagged as churn
+
+These results indicate strong discriminative performance, with the model prioritizing recall to effectively identify customers at risk of churn. This aligns with business goals where retaining churn-prone customers is more valuable than minimizing false positives.
 
 ## Business Recommendations
 - Target fiber optic customers with proactive retention strategies
@@ -72,7 +82,15 @@ The model demonstrates good ability to distinguish churners from non-churners.
 - Scikit-learn
 - Jupyter Notebook
 
+## How to Run
+1. Clone the repository  
+2. Install dependencies: `pip install -r requirements.txt`  
+3. Open and run `telecom_churn_analysis.ipynb`
+
 ## Limitations & Future Work
 - Explore tree-based models for non-linear relationships
 - Perform threshold tuning to optimize recall
 - Incorporate behavioral or time-series customer data
+
+## License
+This project is licensed under the MIT License.
