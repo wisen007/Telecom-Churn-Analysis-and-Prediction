@@ -25,7 +25,7 @@ Target variable: **Churn**
 - Business-oriented interpretation of results
 
 
-- ## Key Exploratory Insights
+ ## Key Exploratory Insights
 
 From exploratory data analysis, the following churn patterns were observed:
 
